@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan</title>
+</head>
+<script>
+    function mxmin() {
+        let a = document.getElementById("n1").value
+        let b = document.getElementById("n2").value
+        let c = document.getElementById("n3").value
+        // alert(a + b + c)
+
+        if (a > b && a > c) {
+            alert(`nilai terbesar adalah ${a}`)
+        } else if (b > a && b > c) {
+            alert(`nilai terbesar adalah ${b}`)
+        } else if (c > a && c > b) {
+            alert(`nilai terbesar adalah ${c}`)
+        } else {
+            alert('nilai sama semua')
+        }
+    }
+
+    function gjgp() {
+        const arr = [6, 5, 8, 9, 15, 11, 7, 10, 4, 12]
+        let gp = []
+        let gj = []
+        for (let i = 0; i < 10; i++) {
+            if (arr[i] % 2 == 1) {
+                console.log(` ganjil : ${arr[i]}`)
+                gp.push(arr[i])
+            } else {
+                console.log(`genap : ${arr[i]}`)
+                gj.push(arr[i])
+            }
+        }
+        console.log(`genap berisi ${gp.length}`)
+        console.log(`ganjil berisi ${gj.length}`)
+    }
+
+    function sort() {
+        const arr = [6, 5, 8, 9, 15, 11, 7, 10, 4, 12]
+        console.log(arr.sort(function(a, b) {
+            return a - b
+        }))
+    }
+
+    function htnl() {
+        let a = parseInt(document.getElementById("n1").value)
+        let b = parseInt(document.getElementById("n2").value)
+        let c = parseInt(document.getElementById("n3").value)
+        let hasil = parseInt((a + b + c) / 3)
+
+        if (hasil > 90) {
+            alert(`nilai angka adalah ${hasil}\nnilai huruf adalah A`)
+        } else if (hasil <= 90 && hasil >= 89) {
+            alert(`nilai angka adalah ${hasil}\nnilai huruf adalah b`)
+        } else if (hasil <= 89 && hasil >= 78) {
+            alert(`nilai angka adalah ${hasil}\nnilai huruf adalah C`)
+        } else if (hasil <= 67 && hasil >= 50) {
+            alert(`nilai angka adalah ${hasil}\nnilai huruf adalah D`)
+        } else {
+            alert(`nilai angka adalah ${hasil}\nnilai huruf adalah E`)
+        }
+        document.getElementById("gj").innerText = hasil
+    }
+</script>
+
+<body>
+    <center>
+        <br>
+        <label for="n1">nilai A : </label>
+        <input type="number" id="n1" placeholder="nilai a"><br>
+        <label for="n2">nilai B : </label>
+        <input type="number" id="n2" placeholder="nilai b"><br>
+        <label for="n3">nilai C : </label>
+        <input type="number" id="n3" placeholder="nilai c">
+        <hr style="width: 200px;">
+        <input type="button" value="mxmin" onclick="mxmin()">
+        <input type="button" value="hitung nilai" onclick="htnl()">
+        <input type="button" value="gjgp" onclick="gjgp()">
+        <input type="button" value="sort" onclick="sort()">
+        <hr style="width: 200px;">
+        <p id="gj"></p>
+        <p id="gp"></p>
+</body>
+
+</html>
