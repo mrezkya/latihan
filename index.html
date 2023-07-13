@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumen</title>
+</head>
+<script>
+    function jumlahkan() {
+        let a = parseInt(document.getElementById("nilai1").value)
+        let b = document.getElementById('operasi').value
+        let c = parseInt(document.getElementById("nilai2").value)
+        if (b == "+") {
+            // alert(`hasil : ${a} | ${b} | ${c}`)
+            let d = a + c
+            document.getElementById('hasil').innerText = d
+        } else if (b == "-") {
+            let d = a - c
+            document.getElementById('hasil').innerText = d
+            // alert(d)
+        } else if (b == '*') {
+            let d = a * c
+            document.getElementById('hasil').innerText = d
+        } else if (b == "/") {
+            let d = a / c
+            document.getElementById('hasil').innerText = d
+        } else if (b == "**") {
+            let d = a ** c
+            document.getElementById('hasil').innerText = d
+        } else {
+            document.getElementById('hasil').innerText = "Masukan operasi dengan benar"
+        }
+    }
+</script>
+
+<body>
+</body>
+<label for="nilai1">nilai 1 : </label>
+<input type="number" placeholder="nilai1" id="nilai1"><br>
+<label for="operasi">operasi : </label>
+<input type="text" placeholder="* + - / **" id="operasi"><br>
+<label for="nilai2">nilai 2 : </label>
+<input type="number" placeholder="nilai 2" id="nilai2"><br>
+<input type="button" value="jumlahkan" onclick="jumlahkan()">
+<p>hasil : <span id="hasil"></span></p>
+
+</html>
